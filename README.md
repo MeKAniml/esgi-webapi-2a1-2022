@@ -17,6 +17,10 @@
 
 N/A.
 
+## Travail perso
+
+Créer tous les contrôleurs en se basant sur https://jsonplaceholder.typicode.com/
+
 ## Todo
 
 - [ ] Installation [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/), [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/windows/)

@@ -26,15 +26,13 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 var_dump($method);
 
-// users
-// posts
 // comments
 // albums
 // photos
 // todos
 
 if ($route === "users") {
-    include "./controllers/users.php";
+    include "./controllers/user.php";
 
     if ($method === "GET") {
         UserController::get();
@@ -43,6 +41,20 @@ if ($route === "users") {
     
     if ($method === "POST") {
         UserController::post();
+        return;
+    }
+}
+
+if ($route === "posts") {
+    include "./controllers/post.php";
+
+    if ($method === "GET") {
+        PostController::get();
+        return;
+    }
+
+    if ($method === "POST") {
+        PostController::post();
         return;
     }
 }
