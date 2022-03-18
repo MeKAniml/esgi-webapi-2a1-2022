@@ -26,6 +26,13 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 var_dump($method);
 
+// users
+// posts
+// comments
+// albums
+// photos
+// todos
+
 if ($route === "users") {
     include "./controllers/users.php";
 
@@ -36,6 +43,10 @@ if ($route === "users") {
     } else {
         include "./controllers/not-found.php";
     }
+} else if ($route === "posts") {
+    //...
+} else if ($route === "comments") {
+    //...
 } else {
     include "./controllers/not-found.php";
 }
