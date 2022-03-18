@@ -1,14 +1,9 @@
 <?php
 
-class UserController
+class NotFoundController
 {
-    public static function get()
+    public static function all()
     {
-        echo "User::get";
-    }
-
-    public static function post()
-    {
-        echo "User::post";
+        echo "Not found";
     }
 }

@@ -38,15 +38,15 @@ if ($route === "users") {
 
     if ($method === "GET") {
         UserController::get();
-    } else if ($method === "POST") {
-        UserController::post();
-    } else {
-        include "./controllers/not-found.php";
+        return;
     }
-} else if ($route === "posts") {
-    //...
-} else if ($route === "comments") {
-    //...
-} else {
-    include "./controllers/not-found.php";
+    
+    if ($method === "POST") {
+        UserController::post();
+        return;
+    }
 }
+
+include "./controllers/not-found.php";
+
+NotFoundController::all();
