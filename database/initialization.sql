@@ -1,0 +1,2 @@
+-- Créer la database
+-- Créer pour chaque entités une table

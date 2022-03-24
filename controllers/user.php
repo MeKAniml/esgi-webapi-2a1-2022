@@ -10,8 +10,13 @@ class UserController
 
         $headers = [];
 
+        $database = new PDO();
+        $query = $database->query();
+        $users = $query->fetchAll();
+
         $body = [
-            "success" => true
+            "success" => true,
+            "users" => $users
         ];
 
         Response::json($statusCode, $headers, $body);
