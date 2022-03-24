@@ -10,7 +10,7 @@
 
 ## Contrôles Continus
 
-- [ ] Premier contrôle continu (à prévoir)
+- [ ] Premier contrôle continu : 29/04/2022
 - [ ] Deuxième contrôle continu (à prévoir)
 
 ## Références
@@ -35,5 +35,5 @@ N/A.
 - [X] Contrôleur
 - [X] Modèle
 - [X] PHP Data Object
-- [ ] Tests
+- [X] Tests
 - [ ] Authentification
