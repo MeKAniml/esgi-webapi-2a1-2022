@@ -16,7 +16,7 @@ http_response_code(200);
  * La route que l'utilisateur essaie de récupérer
  * @see https://www.php.net/manual/en/reserved.variables.request.php
  */
-$route = $_REQUEST["route"];
+$route = isset($_REQUEST["route"]) ? $_REQUEST["route"] : "";
 
 /**
  * La méthode HTTP
