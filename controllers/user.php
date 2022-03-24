@@ -10,10 +10,6 @@ class UserController
 
         $headers = [];
 
-        $database = new PDO();
-        $query = $database->query();
-        $users = $query->fetchAll();
-
         $body = [
             "success" => true,
             "users" => $users
