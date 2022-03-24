@@ -1,14 +1,15 @@
 <?php
 
+
 class UserController
 {
     public static function get()
     {
-        echo "UserController::get";
+        Response::json(200, [], '{"email":true}');
     }
 
     public static function post()
     {
-        echo "UserController::post";
+        Response::json(200, [], '{"email":true}');
     }
 }
