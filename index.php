@@ -24,8 +24,6 @@ $route = $_REQUEST["route"];
  */
 $method = $_SERVER["REQUEST_METHOD"];
 
-var_dump($method);
-
 // comments
 // albums
 // photos
