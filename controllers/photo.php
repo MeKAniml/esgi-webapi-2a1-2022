@@ -2,7 +2,7 @@
 
 include __DIR__ . "/../library/response.php";
 
-class PostController
+class PhotoController
 {
     public static function get()
     {

@@ -6,11 +6,27 @@ class UserController
 {
     public static function get()
     {
-        Response::json(200, [], '{"email":true}');
+        $statusCode = 200;
+
+        $headers = [];
+
+        $body = [
+            "success" => true
+        ];
+
+        Response::json($statusCode, $headers, $body);
     }
 
     public static function post()
     {
-        Response::json(200, [], '{"email":true}');
+        $statusCode = 200;
+
+        $headers = [];
+
+        $body = [
+            "success" => true
+        ];
+
+        Response::json($statusCode, $headers, $body);
     }
 }

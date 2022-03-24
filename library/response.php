@@ -12,6 +12,6 @@ class Response
             header("$key: $value");
         }
 
-        echo $body;
+        echo json_encode($body);
     }
 }

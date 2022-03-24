@@ -2,7 +2,7 @@
 
 include __DIR__ . "/../library/response.php";
 
-class PostController
+class AlbumController
 {
     public static function get()
     {
@@ -11,7 +11,8 @@ class PostController
         $headers = [];
 
         $body = [
-            "success" => true
+            "success" => true,
+            "amin" => false
         ];
 
         Response::json($statusCode, $headers, $body);

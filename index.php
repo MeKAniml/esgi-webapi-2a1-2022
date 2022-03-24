@@ -24,10 +24,7 @@ $route = $_REQUEST["route"];
  */
 $method = $_SERVER["REQUEST_METHOD"];
 
-// comments
-// albums
 // photos
-// todos
 
 if ($route === "users") {
     include "./controllers/user.php";
@@ -54,6 +51,62 @@ if ($route === "posts") {
     if ($method === "POST") {
         PostController::post();
         return;
+    }
+}
+
+if ($route === "albums") {
+    include "./controllers/album.php";
+
+    if ($method === "GET") {
+        AlbumController::get();
+        die();
+    }
+
+    if ($method === "POST") {
+        AlbumController::post();
+        die();
+    }
+}
+
+if ($route === "todos") {
+    include "./controllers/todo.php";
+
+    if ($method === "GET") {
+        TodoController::get();
+        die();
+    }
+
+    if ($method === "POST") {
+        TodoController::post();
+        die();
+    }
+}
+
+if ($route === "comments") {
+    include "./controllers/comment.php";
+
+    if ($method === "GET") {
+        CommentController::get();
+        die();
+    }
+
+    if ($method === "POST") {
+        CommentController::post();
+        die();
+    }
+}
+
+if ($route === "photos") {
+    include "./controllers/photo.php";
+
+    if ($method === "GET") {
+        PhotoController::get();
+        die();
+    }
+
+    if ($method === "POST") {
+        PhotoController::post();
+        die();
     }
 }
 
