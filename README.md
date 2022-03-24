@@ -2,7 +2,7 @@
 
 ## Séances
 
-- [ ] Séance 1
+- [X] Séance 1
 - [ ] Séance 2
 - [ ] Séance 3
 - [ ] Séance 4
@@ -23,18 +23,18 @@ Créer tous les contrôleurs en se basant sur https://jsonplaceholder.typicode.c
 
 ## Todo
 
-- [ ] Installation [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/), [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/windows/)
-- [ ] Installation du dépôt
-- [ ] Hello, world!
-- [ ] Requête
-- [ ] En-tête de requête
-- [ ] Réponse
-- [ ] Corps de réponse
-- [ ] En-tête de réponse
-- [ ] Code de statut de réponse
-- [ ] Méthodes HTTP
-- [ ] Routeur
-- [ ] Contrôleur
+- [X] Installation [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/), [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/windows/)
+- [X] Installation du dépôt
+- [X] Hello, world!
+- [X] Requête
+- [X] En-tête de requête
+- [X] Réponse
+- [X] Corps de réponse
+- [X] En-tête de réponse
+- [X] Code de statut de réponse
+- [X] Méthodes HTTP
+- [X] Routeur
+- [X] Contrôleur
 - [ ] Modèle
 - [ ] PHP Data Object
 - [ ] Authentification
