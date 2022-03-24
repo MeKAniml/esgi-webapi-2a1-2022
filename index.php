@@ -36,8 +36,6 @@ $route = isset($_REQUEST["route"]) ? $_REQUEST["route"] : "";
  */
 $method = $_SERVER["REQUEST_METHOD"];
 
-// photos
-
 if ($route === "users") {
     include "./controllers/user.php";
 
