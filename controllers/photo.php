@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/photo.php";
 
 class PhotoController
 {
@@ -10,8 +11,11 @@ class PhotoController
 
         $headers = [];
 
+        $photos = PhotoModel::getAll();
+
         $body = [
-            "success" => true
+            "success" => true,
+            "photos" => $photos
         ];
 
         Response::json($statusCode, $headers, $body);

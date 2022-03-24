@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/album.php";
 
 class AlbumController
 {
@@ -10,9 +11,11 @@ class AlbumController
 
         $headers = [];
 
+        $albums = AlbumModel::getAll();
+
         $body = [
             "success" => true,
-            "amin" => false
+            "albums" => $albums
         ];
 
         Response::json($statusCode, $headers, $body);

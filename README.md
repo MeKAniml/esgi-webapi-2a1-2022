@@ -3,7 +3,7 @@
 ## Séances
 
 - [X] Séance 1
-- [ ] Séance 2
+- [X] Séance 2
 - [ ] Séance 3
 - [ ] Séance 4
 - [ ] Séance 5
@@ -19,8 +19,6 @@ N/A.
 
 ## Travail perso
 
-Créer tous les contrôleurs en se basant sur https://jsonplaceholder.typicode.com/
-
 ## Todo
 
 - [X] Installation [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/), [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/windows/)
@@ -35,6 +33,7 @@ Créer tous les contrôleurs en se basant sur https://jsonplaceholder.typicode.c
 - [X] Méthodes HTTP
 - [X] Routeur
 - [X] Contrôleur
-- [ ] Modèle
-- [ ] PHP Data Object
+- [X] Modèle
+- [X] PHP Data Object
+- [ ] Tests
 - [ ] Authentification

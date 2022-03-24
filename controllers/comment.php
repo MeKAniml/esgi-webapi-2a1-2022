@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/comment.php";
 
 class CommentController
 {
@@ -10,8 +11,11 @@ class CommentController
 
         $headers = [];
 
+        $comments = CommentModel::getAll();
+
         $body = [
-            "success" => true
+            "success" => true,
+            "comments" => $comments
         ];
 
         Response::json($statusCode, $headers, $body);

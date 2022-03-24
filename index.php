@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * Permet d'afficher constamment toutes les erreurs (même les masquées)
+ * @see https://www.php.net/manual/en/function.ini-set.php
+ */
+ini_set("display_errors", 1);
+
+/**
+ * Permet d'afficher tous les types d'erreurs (warnings, info, erreurs, ...)
+ * @see https://www.php.net/manual/en/function.error-reporting.php
+ */
+error_reporting(E_ALL);
+
+/**
  * Permet d'ajouter un en-tête à la réponse
  * @see https://www.php.net/manual/en/function.header.php
  */

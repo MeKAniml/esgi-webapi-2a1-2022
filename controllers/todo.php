@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/todo.php";
 
 class TodoController
 {
@@ -10,8 +11,11 @@ class TodoController
 
         $headers = [];
 
+        $todos = TodoModel::getAll();
+
         $body = [
-            "success" => true
+            "success" => true,
+            "todos" => $todos
         ];
 
         Response::json($statusCode, $headers, $body);

@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/user.php";
 
 class UserController
 {
@@ -9,6 +10,8 @@ class UserController
         $statusCode = 200;
 
         $headers = [];
+
+        $users = UserModel::getAll();
 
         $body = [
             "success" => true,

@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/post.php";
 
 class PostController
 {
@@ -10,8 +11,11 @@ class PostController
 
         $headers = [];
 
+        $posts = PostModel::getAll();
+
         $body = [
-            "success" => true
+            "success" => true,
+            "posts" => $posts
         ];
 
         Response::json($statusCode, $headers, $body);
