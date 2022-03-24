@@ -1,5 +1,6 @@
 <?php
 
+include __DIR__ . "/../library/response.php";
 
 class UserController
 {
