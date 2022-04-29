@@ -12,4 +12,11 @@ class TodoModel
 
         return $todos;
     }
+    
+    public static function createOne($todo)
+    {
+        $databaseConnection = DatabaseSettings::getConnection();
+        $query = $databaseConnection->prepare("INSERT INTO todos(title, completed, userId) VALUES(:title, :completed, :userId)");
+        $query->execute($todo);
+    }
 }

@@ -12,4 +12,11 @@ class PostModel
 
         return $posts;
     }
+
+    public static function createOne($post)
+    {
+        $databaseConnection = DatabaseSettings::getConnection(); 
+        $query = $databaseConnection->prepare("INSERT INTO posts(title, body, userId) VALUES(:title, :body, :userId)");
+        $query->execute($post);
+    }
 }

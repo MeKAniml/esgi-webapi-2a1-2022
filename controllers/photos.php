@@ -1,9 +1,10 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
-include __DIR__ . "/../models/post.php";
+include __DIR__ . "/../models/photos.php";
+include __DIR__ . "/../library/request.php";
 
-class PostController
+class PhotoController
 {
     public static function get()
     {
@@ -11,11 +12,11 @@ class PostController
 
         $headers = [];
 
-        $posts = PostModel::getAll();
+        $photos = PhotoModel::getAll();
 
         $body = [
             "success" => true,
-            "posts" => $posts
+            "photos" => $photos
         ];
 
         Response::json($statusCode, $headers, $body);
@@ -26,6 +27,15 @@ class PostController
         $statusCode = 200;
 
         $headers = [];
+
+        $json = Request::json();
+
+        PhotoModel::createOne([
+            "albumId" => $json->albumId,
+            "title" => $json->title,
+            "url" => $json->url,
+            "thumbnailUrl" => $json->thumbnailUrl
+        ]);
 
         $body = [
             "success" => true

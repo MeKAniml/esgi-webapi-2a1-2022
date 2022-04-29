@@ -12,4 +12,11 @@ class CommentModel
 
         return $comments;
     }
+
+    public static function createOne($comment)
+    {
+        $databaseConnection = DatabaseSettings::getConnection();
+        $query = $databaseConnection->prepare("INSERT INTO comments(email, name, postId) VALUES(:email, :name, :postId)");
+        $query->execute($comment);
+    }
 }

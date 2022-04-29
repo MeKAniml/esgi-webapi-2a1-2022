@@ -1,44 +1,44 @@
 <?php
 
 include __DIR__ . "/../library/response.php";
-include __DIR__ . "/../models/user.php";
+include __DIR__ . "/../models/comments.php";
 include __DIR__ . "/../library/request.php";
 
-class UserController
+class CommentController
 {
     public static function get()
     {
-        $statusCode = 200;
+        try {
+            $statusCode = 200;
 
-        $headers = [];
+            $headers = [];
 
-        $users = UserModel::getAll();
+            $comments = CommentModel::getAll();
 
-        $body = [
-            "success" => true,
-            "users" => $users
-        ];
+            $body = [
+                "success" => true,
+                "comments" => $comments
+            ];
 
-        Response::json($statusCode, $headers, $body);
+            Response::json($statusCode, $headers, $body);
+        } catch (PDOException $exception) {
+            Response::json(500, [], ["success" => false, "error" => $exception->getMessage()]);
+        }
     }
 
     public static function post()
     {
         try {
-            $json = Request::json();
-
             $statusCode = 200;
 
             $headers = [];
 
-            UserModel::createOne([
+            $json = Request::json();
+
+            CommentModel::createOne([
                 "name" => $json->name,
-                "username" => $json->username,
                 "email" => $json->email,
-                "phone" => $json->phone,
-                "website" => $json->website,
-                "password" => $json->password,
-                "role" => $json->role
+                "postId" => $json->postId
             ]);
 
             $body = [

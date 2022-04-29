@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f5693cb0-13a7-4bf0-84f9-5218d03b0672",
+		"_postman_id": "67680824-7760-4b8f-8e06-614f0aab8135",
 		"name": "esgi-webapi-2a1-2022",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,13 +11,7 @@
 				{
 					"name": "get all users",
 					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"host": true,
-							"user-agent": true,
-							"accept": true,
-							"accept-encoding": true,
-							"connection": true
-						}
+						"disabledSystemHeaders": {}
 					},
 					"request": {
 						"method": "GET",
@@ -41,6 +35,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Lucas\",\n    \"username\" : \"lucaslavander\",\n    \"email\" : \"anairi@esgi.fr\",\n    \"phone\" : \"0102030405\",\n    \"website\" : \"https://github.com/aminnairi\",\n    \"password\" : \"password\",\n    \"role\" : \"USER\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost/esgi-webapi-2a1-2022/users",
 							"protocol": "http",
@@ -127,15 +130,24 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"title\": \"Mon super album\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost/esgi-webapi-2a1-2022/posts",
+							"raw": "http://localhost/esgi-webapi-2a1-2022/albums",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
 								"esgi-webapi-2a1-2022",
-								"posts"
+								"albums"
 							]
 						}
 					},
@@ -170,6 +182,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postId\": 1,\n    \"name\": \"Commentaire\",\n    \"email\": \"user@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost/esgi-webapi-2a1-2022/comments",
 							"protocol": "http",
@@ -213,6 +234,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"albumId\": 1,\n    \"title\": \"Titre\",\n    \"url\": \"domain.com\",\n    \"thumbnailUrl\": \"domain.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost/esgi-webapi-2a1-2022/photos",
 							"protocol": "http",

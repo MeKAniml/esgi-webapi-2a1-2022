@@ -37,7 +37,7 @@ $route = isset($_REQUEST["route"]) ? $_REQUEST["route"] : "";
 $method = $_SERVER["REQUEST_METHOD"];
 
 if ($route === "users") {
-    include "./controllers/user.php";
+    include "./controllers/users.php";
 
     if ($method === "GET") {
         UserController::get();
@@ -51,7 +51,7 @@ if ($route === "users") {
 }
 
 if ($route === "posts") {
-    include "./controllers/post.php";
+    include "./controllers/posts.php";
 
     if ($method === "GET") {
         PostController::get();
@@ -65,7 +65,7 @@ if ($route === "posts") {
 }
 
 if ($route === "albums") {
-    include "./controllers/album.php";
+    include "./controllers/albums.php";
 
     if ($method === "GET") {
         AlbumController::get();
@@ -79,7 +79,7 @@ if ($route === "albums") {
 }
 
 if ($route === "todos") {
-    include "./controllers/todo.php";
+    include "./controllers/todos.php";
 
     if ($method === "GET") {
         TodoController::get();
@@ -93,7 +93,7 @@ if ($route === "todos") {
 }
 
 if ($route === "comments") {
-    include "./controllers/comment.php";
+    include "./controllers/comments.php";
 
     if ($method === "GET") {
         CommentController::get();
@@ -107,7 +107,7 @@ if ($route === "comments") {
 }
 
 if ($route === "photos") {
-    include "./controllers/photo.php";
+    include "./controllers/photos.php";
 
     if ($method === "GET") {
         PhotoController::get();

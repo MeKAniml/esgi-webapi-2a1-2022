@@ -12,4 +12,11 @@ class AlbumModel
 
         return $albums;
     }
+
+    public static function createOne($album)
+    {
+        $databaseConnection = DatabaseSettings::getConnection();
+        $query = $databaseConnection->prepare("INSERT INTO albums(title, userId) VALUES(:title, :userId)");
+        $query->execute($album);
+    }
 }
