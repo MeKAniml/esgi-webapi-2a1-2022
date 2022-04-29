@@ -12,4 +12,10 @@ class UserModel
 
         return $users;
     }
+
+    public static function createOne($user) {
+        $databaseConnection = DatabaseSettings::getConnection();
+        $query = $databaseConnection->query("INSERT INTO users(name, username, email, phone, website, password, role) VALUES({$user['name']}, {$user['username']}, {$user['email']}, {$user['phone']}, {$user['website']}, {$user['password']}, {$user['role']});");
+
+    }
 }

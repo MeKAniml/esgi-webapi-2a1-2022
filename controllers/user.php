@@ -27,6 +27,16 @@ class UserController
 
         $headers = [];
 
+        UserModel::createOne([
+            "name" => "Amin",
+            "username" => "aminnairi",
+            "email" => "anairi@esgi.fr",
+            "phone" => "0102030405",
+            "website" => "https://github.com/aminnairi",
+            "password" => "password",
+            "role" => "USER"
+        ]);
+
         $body = [
             "success" => true
         ];
