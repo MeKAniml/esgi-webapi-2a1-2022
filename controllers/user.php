@@ -2,6 +2,7 @@
 
 include __DIR__ . "/../library/response.php";
 include __DIR__ . "/../models/user.php";
+include __DIR__ . "/../library/request.php";
 
 class UserController
 {
@@ -23,24 +24,30 @@ class UserController
 
     public static function post()
     {
-        $statusCode = 200;
+        try {
+            $json = Request::json();
 
-        $headers = [];
+            $statusCode = 200;
 
-        UserModel::createOne([
-            "name" => "Amin",
-            "username" => "aminnairi",
-            "email" => "anairi@esgi.fr",
-            "phone" => "0102030405",
-            "website" => "https://github.com/aminnairi",
-            "password" => "password",
-            "role" => "USER"
-        ]);
+            $headers = [];
 
-        $body = [
-            "success" => true
-        ];
+            UserModel::createOne([
+                "name" => $json->name,
+                "username" => $json->username,
+                "email" => $json->email,
+                "phone" => $json->phone,
+                "website" => $json->website,
+                "password" => $json->password,
+                "role" => $json->role
+            ]);
 
-        Response::json($statusCode, $headers, $body);
+            $body = [
+                "success" => true
+            ];
+
+            Response::json($statusCode, $headers, $body);
+        } catch (PDOException $exception) {
+            Response::json(500, [], ["success" => false, "error" => $exception->getMessage()]);
+        }
     }
 }
