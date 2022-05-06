@@ -9,4 +9,9 @@ class Request
 
         return $json;
     }
+
+    public static function headers()
+    {
+        return getallheaders();
+    }
 }

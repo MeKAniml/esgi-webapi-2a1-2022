@@ -49,4 +49,6 @@ CREATE TABLE todos(
     completed BOOLEAN DEFAULT FALSE
 ) ENGINE = InnoDB;
 
-INSERT INTO users(name, username, email, phone, website, password, role) VALUES( 'name', 'username', 'email@domain.com', '0102030405', 'esgi.fr', 'password', 'USER');
+INSERT INTO users(name, username, email, phone, website, password, role) VALUES( 'Administrator', 'administrator', 'administrator@domain.com', '0102030405', 'esgi.fr', '$2y$10$qFHY2aMyIQZDPCs0HnoRjuTHlkcexZnYjfS3KylfzRde8CfvFlOn.', 'ADMINISRATOR');
+
+

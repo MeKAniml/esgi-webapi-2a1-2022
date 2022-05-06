@@ -36,6 +36,20 @@ $route = isset($_REQUEST["route"]) ? $_REQUEST["route"] : "";
  */
 $method = $_SERVER["REQUEST_METHOD"];
 
+if ($route === "login") {
+    include "./controllers/login.php";
+
+    if ($method === "POST") {
+        LoginController::post();
+        return;
+    }
+
+    if ($method === "DELETE") {
+        LoginController::delete();
+        return;
+    }
+}
+
 if ($route === "users") {
     include "./controllers/users.php";
 
