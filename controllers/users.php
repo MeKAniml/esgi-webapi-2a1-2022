@@ -74,7 +74,7 @@ class UserController
                 "email" => $json->email,
                 "phone" => $json->phone,
                 "website" => $json->website,
-                "password" => $json->password,
+                "password" => password_hash($json->password, PASSWORD_BCRYPT),
                 "role" => $json->role
             ]);
 

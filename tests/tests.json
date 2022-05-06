@@ -15,7 +15,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "be3678bc70e8d28f6a8b63708a8c1cdd",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost/esgi-webapi-2a1-2022/users",
 							"protocol": "http",
@@ -295,6 +301,64 @@
 							"path": [
 								"esgi-webapi-2a1-2022",
 								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login one user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"administrator@domain.com\",\n    \"password\": \"motdepasse\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/esgi-webapi-2a1-2022/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"esgi-webapi-2a1-2022",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "be3678bc70e8d28f6a8b63708a8c1cdd",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/esgi-webapi-2a1-2022/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"esgi-webapi-2a1-2022",
+								"login"
 							]
 						}
 					},
