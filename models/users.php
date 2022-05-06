@@ -64,6 +64,6 @@ class UserModel
         $set = implode(", ", $set);
         $databaseConnection = DatabaseSettings::getConnection();
         $query = $databaseConnection->prepare("UPDATE users SET $set WHERE id = :id");
-        $query->execute(["id" => $id, ...$user]);
+        $query->execute(array_merge(["id" => $id], $user));
     }
 }
