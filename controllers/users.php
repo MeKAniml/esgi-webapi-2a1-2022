@@ -9,6 +9,25 @@ class UserController
     public static function get()
     {
         try {
+            $headers = Request::headers();
+
+            if (!isset($headers["token"])) {
+                Response::json(400, [], ["success" => false, "error" => "Bad request"]);
+                return;
+            }
+
+            $user = UserModel::getOneByToken($headers["token"]);
+
+            if (!$user) {
+                Response::json(404, [], ["success" => false, "error" => "Not found"]);
+                return;
+            }
+
+            if ($user["role"] !== "ADMINISTRATOR") {
+                Response::json(401, [], ["success" => false, "error" => "Unauthorized"]);
+                return;
+            }
+
             $statusCode = 200;
 
             $headers = [];
@@ -29,6 +48,20 @@ class UserController
     public static function post()
     {
         try {
+            $headers = Request::headers();
+
+            if (!isset($headers["token"])) {
+                Response::json(400, [], ["success" => false, "error" => "Bad request"]);
+                return;
+            }
+
+            $user = UserModel::getOneByToken($headers["token"]);
+
+            if (!$user) {
+                Response::json(404, [], ["success" => false, "error" => "Not found"]);
+                return;
+            }
+
             $json = Request::json();
 
             $statusCode = 200;

@@ -1,8 +1,8 @@
 <?php
 
 include __DIR__ . "/../library/request.php";
-include __DIR__ . "/../database/settings.php";
 include __DIR__ . "/../library/response.php";
+include __DIR__ . "/../models/users.php";
 
 class LoginController
 {
@@ -10,14 +10,7 @@ class LoginController
     {
         try {
             $json = Request::json();
-            $databaseConnection = DatabaseSettings::getConnection();
-            $query = $databaseConnection->prepare("SELECT id, email, password FROM users WHERE email = :email");
-
-            $query->execute([
-                "email" => $json->email
-            ]);
-
-            $user = $query->fetch();
+            $user = UserModel::getOneByEmail($json->email);
 
             if (!$user) {
                 Response::json(400, [], ["success" => false, "error" => "Bad request"]);
@@ -31,13 +24,7 @@ class LoginController
 
             $token = bin2hex(random_bytes(16));
 
-            $query = $databaseConnection->prepare("UPDATE users SET token = :token WHERE id = :id");
-
-            $query->execute([
-                "token" => $token,
-                "id" => $user["id"]
-            ]);
-
+            UserModel::updateOneById($user["id"], ["token" => $token]);
             Response::json(200, [], ["success" => true, "token" => $token]);
         } catch (PDOException $exception) {
             Response::json(500, [], ["success" => false, "error" => $exception->getMessage()]);
@@ -55,14 +42,18 @@ class LoginController
                 return;
             }
 
-            $databaseConnection = DatabaseSettings::getConnection();
-            $query = $databaseConnection->prepare("UPDATE users SET token = '' WHERE token = :token");
+            $user = UserModel::getOneByToken($headers["token"]);
 
-            $query->execute([
-                "token" => $headers["token"]
+            if (!$user) {
+                Response::json(404, [], ["success" => false, "error" => "Not found"]);
+                return;
+            }
+
+            UserModel::updateOneById($user["id"], [
+                "token" => NULL
             ]);
 
-            Response::json(200, [], ["success" => false]);
+            Response::json(200, [], ["success" => true]);
         } catch (PDOException $exception) {
             Response::json(500, [], ["success" => false, "error" => $exception->getMessage()]);
         }
