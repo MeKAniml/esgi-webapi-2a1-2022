@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . "/../database/settings.php";
+require __DIR__ . "/../database/settings.php";
 
 class UserModel
 {
@@ -25,9 +25,11 @@ class UserModel
         $databaseConnection = DatabaseSettings::getConnection();
         $query = $databaseConnection->prepare("SELECT * FROM users WHERE email = :email");
 
-        $query->execute([
+        $query->execute(
+            [
             "email" => $email
-        ]);
+            ]
+        );
 
         $user = $query->fetch();
 
@@ -39,9 +41,11 @@ class UserModel
         $databaseConnection = DatabaseSettings::getConnection();
         $query = $databaseConnection->prepare("SELECT * FROM users WHERE token = :token");
 
-        $query->execute([
+        $query->execute(
+            [
             "token" => $token
-        ]);
+            ]
+        );
 
         $user = $query->fetch();
 

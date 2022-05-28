@@ -19,6 +19,10 @@ N/A.
 
 ## Travail perso
 
+- Ajouter les routes en PATCH et DELETE pour toutes les entités
+- Empêcher les utilisateurs non-connectés d'accéder aux routes (sauf POST /login et DELETE /logout)
+- Empêcher les utilisateurs non-administrateurs d'ajouter, de modifier ou supprimer des ressources (PATCH, POST et DELETE)
+
 ## Todo
 
 - [X] Installation [WAMP](https://www.wampserver.com/en/download-wampserver-64bits/), [XAMPP](https://www.apachefriends.org/download.html), [MAMP](https://www.mamp.info/en/windows/)

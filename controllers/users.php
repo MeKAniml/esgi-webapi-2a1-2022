@@ -1,11 +1,14 @@
 <?php
 
-include __DIR__ . "/../library/response.php";
-include __DIR__ . "/../models/users.php";
-include __DIR__ . "/../library/request.php";
+require __DIR__ . "/../library/response.php";
+require __DIR__ . "/../models/users.php";
+require __DIR__ . "/../library/request.php";
 
 class UserController
 {
+    /**
+     * @route GET /users
+     */
     public static function get()
     {
         try {
@@ -68,7 +71,8 @@ class UserController
 
             $headers = [];
 
-            UserModel::createOne([
+            UserModel::createOne(
+                [
                 "name" => $json->name,
                 "username" => $json->username,
                 "email" => $json->email,
@@ -76,7 +80,8 @@ class UserController
                 "website" => $json->website,
                 "password" => password_hash($json->password, PASSWORD_BCRYPT),
                 "role" => $json->role
-            ]);
+                ]
+            );
 
             $body = [
                 "success" => true
