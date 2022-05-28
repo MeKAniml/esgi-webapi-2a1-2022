@@ -18,7 +18,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "be3678bc70e8d28f6a8b63708a8c1cdd",
+								"value": "778232207e8138283d23ab524b7355e9",
 								"type": "text"
 							}
 						],
@@ -40,10 +40,17 @@
 					"name": "create a new user",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "10ee14e48ded88db0f1ccc6bc08a8319",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\" : \"Lucas\",\n    \"username\" : \"lucaslavander\",\n    \"email\" : \"anairi@esgi.fr\",\n    \"phone\" : \"0102030405\",\n    \"website\" : \"https://github.com/aminnairi\",\n    \"password\" : \"password\",\n    \"role\" : \"USER\"\n}\n",
+							"raw": "{\n    \"name\" : \"Lucas\",\n    \"username\" : \"lucaslavander\",\n    \"email\" : \"llavander@esgi.fr\",\n    \"phone\" : \"0102030405\",\n    \"website\" : \"https://github.com/llavander\",\n    \"password\" : \"password\",\n    \"role\" : \"USER\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -318,7 +325,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"administrator@domain.com\",\n    \"password\": \"motdepasse\"\n}",
+							"raw": "{\n    \"email\": \"llavander@esgi.fr\",\n    \"password\": \"password\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -346,7 +353,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "be3678bc70e8d28f6a8b63708a8c1cdd",
+								"value": "778232207e8138283d23ab524b7355e9",
 								"type": "text"
 							}
 						],
