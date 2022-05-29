@@ -4,14 +4,13 @@
 
 - [X] Séance 1
 - [X] Séance 2
-- [ ] Séance 3
-- [ ] Séance 4
+- [X] Séance 3
+- [X] Séance 4
 - [ ] Séance 5
 
 ## Contrôles Continus
 
-- [ ] Premier contrôle continu : 29/04/2022
-- [ ] Deuxième contrôle continu (à prévoir)
+- [X] Premier contrôle continu : 29/04/2022
 
 ## Références
 
@@ -40,4 +39,4 @@ N/A.
 - [X] Modèle
 - [X] PHP Data Object
 - [X] Tests
-- [ ] Authentification
+- [X] Authentification
